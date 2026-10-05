@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Aggregator: mỗi service là một Spring Boot app độc lập (có parent riêng) -->
+    <groupId>org.example</groupId>
+    <artifactId>md04_ss14</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>md04_ss14</name>
+
+    <modules>
+        <module>identity-service</module>
+        <module>product-service</module>
+        <module>gateway-service</module>
+    </modules>
+</project>

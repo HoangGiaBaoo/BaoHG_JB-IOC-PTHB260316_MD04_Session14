@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: identity-service
+  datasource:
+    # Dùng schema riêng "identity" để không đụng bảng users/refresh_tokens có sẵn ở schema public
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=identity
+    username: postgres
+    password: "Giabao2005@"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: identity
+        hbm2ddl:
+          create_namespaces: true
+    show-sql: false
+    open-in-view: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+app:
+  jwt:
+    secret: "vS6K5vH8N2zB4xR9mQ3pL1wT7yC5vH8N2zB4xR9mQ3pL1wT7yC5vH8N2z"
+    access-token-expiration: 900000 # 15 mins
+    refresh-token-expiration: 604800000 # 7 days
